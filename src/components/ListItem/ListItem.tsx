@@ -39,14 +39,17 @@ const animesData = [
   },
 ];
 
-const ListItem: React.FC = () => {
+interface ListItemProps {
+  className?: string;
+}
+const ListItem: React.FC<ListItemProps> = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
       <ul className="flex flex-col gap-4 ">
         {animesData.map((item) => (
           <li
             key={item.mal_id}
-            className="flex flex-row items-center gap-5 bg-slate-400 cursor-pointer"
+            className="flex flex-row items-center gap-5 bg-slate-50 cursor-pointer"
           >
             <img
               className="w-16"
